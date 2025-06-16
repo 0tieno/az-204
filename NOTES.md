@@ -157,3 +157,60 @@ Azure Storage encryption is enabled for all storage accounts and can't be disabl
 All Azure Storage resources are encrypted, including blobs, disks, files, queues, and tables. All object metadata is also encrypted.
 
 There's no extra cost for Azure Storage encryption.
+
+---
+
+# Azure Cosmos DB
+
+Azure Cosmos DB is a fully managed NoSQL database designed to provide low latency, elastic scalability of throughput, well-defined semantics for data consistency, and high availability.
+
+Azure Cosmos DB offers 99.999% read and write availability for multi-region databases.
+
+Azure Cosmos DB offers five well-defined levels. From strongest to weakest, the levels are:
+
+- Strong
+- Bounded staleness
+- Session
+- Consistent prefix
+- Eventual
+
+With Azure Cosmos DB, you pay for the throughput you provision and the storage you consume on an hourly basis.
+
+Change feed in Azure Cosmos DB is a persistent record of changes to a container in the order they occur.
+
+---
+
+# Azure Container Registry & Containers
+
+Azure Container Registry (ACR) is a managed, private Docker registry service based on the open-source Docker Registry 2.0
+
+Use Azure Container Registry Tasks (ACR Tasks) to streamline building, testing, pushing, and deploying images in Azure. Configure build tasks to automate your container OS and framework patching pipeline, and build images automatically when your team commits code to source control.
+Dockerfiles typically include the following information:
+
+- The base or parent image we use to create the new image
+- Commands to update the base OS and install other software
+- Build artifacts to include, such as a developed application
+- Services to expose, such a storage and network configuration
+- Command to run when the container is launched
+
+---
+
+# Azure Container Instances
+
+Azure Container Instances (ACI) offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+
+By default, Azure Container Instances are stateless. If the container crashes or stops, all of its state is lost. To persist state beyond the lifetime of the container, you must mount a volume from an external store.
+
+---
+
+# Azure Container Apps
+
+Azure Container Apps is a serverless container service that supports microservice applications and robust autoscaling capabilities without the overhead of managing complex infrastructure.
+
+Azure Container Apps enables you to run microservices and containerized applications on a serverless platform that runs on top of Azure Kubernetes Service.
+
+In most situations where you want to run multiple containers, such as when implementing a microservice architecture, deploy each service as a separate container app.
+
+Container Apps doesn't support Azure Key Vault integration. Instead, enable managed identity in the container app and use the Key Vault SDK in your app to access secrets.
+
+The Distributed Application Runtime (Dapr) is a set of incrementally adoptable features that simplify the authoring of distributed, microservice-based applications.
