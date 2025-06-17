@@ -214,3 +214,35 @@ In most situations where you want to run multiple containers, such as when imple
 Container Apps doesn't support Azure Key Vault integration. Instead, enable managed identity in the container app and use the Key Vault SDK in your app to access secrets.
 
 The Distributed Application Runtime (Dapr) is a set of incrementally adoptable features that simplify the authoring of distributed, microservice-based applications.
+
+---
+
+# Azure Key Vault
+
+Azure Key Vault is a cloud service for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, or cryptographic keys.
+
+The Azure Key Vault service supports two types of containers: vaults and managed hardware security module(HSM) pools. Vaults support storing software and HSM-backed keys, secrets, and certificates. Managed HSM pools only support HSM-backed keys.
+
+A common challenge for developers is the management of secrets and credentials used to secure communication between different components making up a solution. Managed identities eliminate the need for developers to manage credentials.
+
+---
+
+# Azure App Configuration
+
+Azure App Configuration provides a service to centrally manage application settings and feature flags.
+
+Use App Configuration to store all the settings for your application and secure their accesses in one place.
+
+---
+
+# Azure API Management
+
+Azure API Management is made up of an API gateway, a management plane, and a developer portal. These components are Azure-hosted and fully managed by default.
+
+---
+
+# Azure Queue Mechanisms
+
+Azure supports two types of queue mechanisms: Service Bus queues and Storage queues.
+
+You can specify two different modes in which Service Bus receives messages: Receive and delete or Peek lock.
