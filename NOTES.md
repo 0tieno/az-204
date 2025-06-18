@@ -246,3 +246,105 @@ Azure API Management is made up of an API gateway, a management plane, and a dev
 Azure supports two types of queue mechanisms: Service Bus queues and Storage queues.
 
 You can specify two different modes in which Service Bus receives messages: Receive and delete or Peek lock.
+
+---
+
+# Azure Service Principals & Permissions
+
+There are three types of service principal:
+- Application
+- Managed identity
+- Legacy
+
+The Microsoft identity platform supports two types of permissions: delegated access and app-only access.
+
+- Delegated access are used by apps that have a signed-in user present.
+- App-only access permissions are used by apps that run without a signed-in user present, for example, apps that run as background services or daemons. Only an administrator can consent to app-only access permissions.
+
+There are three consent types: static user consent, incremental and dynamic user consent, and admin consent.
+
+The Microsoft Authentication Library (MSAL) enables developers to acquire security tokens from the Microsoft identity platform to authenticate users and access secured web APIs.
+
+---
+
+# Azure Storage Shared Access Signatures
+
+A shared access signature (SAS) is a URI that grants restricted access rights to Azure Storage resources.
+
+Azure Storage supports three types of shared access signatures:
+- User delegation SAS
+- Service SAS
+- Account SAS
+
+When you use a SAS to access data stored in Azure Storage, you need two components. The first is a URI to the resource you want to access. The second part is a SAS token that you've created to authorize access to that resource.
+
+---
+
+# Microsoft Graph
+
+Microsoft Graph is the gateway to data and intelligence in Microsoft 365. It provides a unified programmability model that you can use to access the tremendous amount of data in Microsoft 365, Windows 10, and Enterprise Mobility + Security.
+
+Microsoft Graph connectors work in the incoming direction, delivering data external to the Microsoft cloud into Microsoft Graph services and applications.
+
+Microsoft Graph Data Connect provides a set of tools to streamline secure and scalable delivery of Microsoft Graph data to popular Azure data stores.
+
+- **GET**: Read data from a resource.
+- **POST**: Create a new resource, or perform an action.
+- **PATCH**: Update a resource with new values.
+- **PUT**: Replace a resource with a new one.
+- **DELETE**: Remove a resource.
+
+---
+
+# Azure Event Grid
+
+Azure Event Grid is a highly scalable, fully managed Pub Sub message distribution service that offers flexible message consumption patterns using the Hypertext Transfer Protocol (HTTP) and Message Queuing Telemetry Transport (MQTT) protocols. With Azure Event Grid, you can build data pipelines with device data, integrate applications, and build event-driven serverless architectures.
+
+## Key Concepts
+
+**Publishers:**  
+A publisher is the application that sends events to Event Grid.  
+A partner is a kind of publisher that sends events from its system to make them available to Azure customers.
+
+**Events:**  
+An event is the smallest amount of information that fully describes something that happened in a system.
+
+**Event Sources:**  
+An event source is where the event happens.
+
+**Topics:**  
+A topic holds events that have been published to Event Grid.
+
+**Event Subscriptions:**  
+A subscription tells Event Grid which events on a topic you're interested in receiving.
+
+**Event Handlers:**  
+From an Event Grid perspective, an event handler is the place where the event is sent.
+
+## Security
+
+Event Grid provides security for subscribing to topics and when publishing events to topics.
+
+Azure Event Grid supports two types of event schemas: Event Grid event schema and Cloud event schema.
+
+Event Grid provides durable delivery. It tries to deliver each event at least once for each matching subscription immediately. If a subscriber's endpoint doesn't acknowledge receipt of an event or if there's a failure, Event Grid retries delivery based on a fixed retry schedule and retry policy. By default, Event Grid delivers one event at a time to the subscriber, and the payload is an array with a single event.
+
+**Dead-letter events**  
+When Event Grid can't deliver an event within a certain time period or after trying to deliver the event a specific number of times, it can send the undelivered event to a storage account. This process is known as dead-lettering. Event Grid dead-letters an event when one of the following conditions is met.
+
+- Event isn't delivered within the time-to-live period.
+- The number of tries to deliver the event exceeds the limit.
+
+**Exercise:**  
+https://microsoftlearning.github.io/mslearn-azure-developer/instructions/azure-events-messages/01-event-grid-events-to-endpoint.html
+
+---
+
+# Azure Event Hubs
+
+Azure Event Hubs is a native data-streaming service in the cloud that can stream millions of events per second, with low latency, from any source to any destination. Event Hubs is compatible with Apache Kafka. It enables you to run existing Kafka workloads without any code changes.
+
+Event Hubs Capture enables you to process real-time and batch-based pipelines on the same stream. This means you can build solutions that grow with your needs over time.
+
+**Exercise:**  
+https://microsoftlearning.github.io/mslearn-azure-developer/instructions/azure-events-messages/02-event-hubs-send-receive.html
