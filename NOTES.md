@@ -348,3 +348,5 @@ Event Hubs Capture enables you to process real-time and batch-based pipelines on
 
 **Exercise:**  
 https://microsoftlearning.github.io/mslearn-azure-developer/instructions/azure-events-messages/02-event-hubs-send-receive.html
+
+There are four main components in the change feed processor: the monitored container, the lease container, the compute instance, and the delegate. The monitored container has the data from which the change feed is generated. The delegate component can be used to define custom logic to process the changes that the change feed reads. The compute instance hosts the change feed processor to listen for changes. It can be represented by a VM, a Kubernetes pod, an Azure App Service instance, or an actual physical machine. The lease container acts as a state storage and coordinates the processing of the change feed across multiple workers.
